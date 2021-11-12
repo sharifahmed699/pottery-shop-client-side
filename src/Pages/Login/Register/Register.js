@@ -48,7 +48,7 @@ const Register = () => {
                                 type="text"
                                 variant="standard"
                                 name="name"
-                                onChange={handleOnChange}
+                                onBlur={handleOnChange}
                             />
                             <TextField
                                 sx={{ width: "50%", m: 1 }}
@@ -57,7 +57,7 @@ const Register = () => {
                                 type="email"
                                 variant="standard"
                                 name="email"
-                                onChange={handleOnChange}
+                                onBlur={handleOnChange}
                             />
                             <TextField
                                 sx={{ width: "50%", m: 1 }}
@@ -66,7 +66,7 @@ const Register = () => {
                                 variant="standard"
                                 name="password"
                                 type="password"
-                                onChange={handleOnChange}
+                                onBlur={handleOnChange}
                             />
                             <TextField
                                 sx={{ width: "50%", m: 1 }}
@@ -75,7 +75,7 @@ const Register = () => {
                                 variant="standard"
                                 name="password1"
                                 type="password"
-                                onChange={handleOnChange}
+                                onBlur={handleOnChange}
                             />
                             <Button
                                 sx={{ width: "50%", m: 1, bgcolor: 'secondary.main' }}
