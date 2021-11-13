@@ -28,40 +28,43 @@ const Login = () => {
                     <Typography variant="h5" gutterBottom component="div">
                         Please Login
                     </Typography>
-                    <form onSubmit={handleLogin}>
-                        <TextField
-                            sx={{ width: "50%", m: 1 }}
-                            id="filled-basic"
-                            label="Your Email"
-                            variant="standard"
-                            name="email"
-                            type="email"
-                            onBlur={handleOnChange}
-                        />
-                        <TextField
-                            sx={{ width: "50%", m: 1 }}
-                            id="filled-basic"
-                            label="Your Password"
-                            variant="standard"
-                            name="password"
-                            type="password"
-                            onBlur={handleOnChange}
-                        />
-                        <Button
-                            sx={{ width: "50%", m: 1, bgcolor: 'secondary.main' }}
-                            type="submit"
-                            variant="contained"
-                        >
-                            Login
-                        </Button>
-                        <br />
-                        <NavLink style={{ textDecoration: "none" }} to="/register">
-                            <Button variant="text">New User? Please Register</Button>
-                        </NavLink>
-                        {isLoading && <CircularProgress color="success" />}
-                        {user?.email && <Alert severity="success">Login successfully!</Alert>}
-                        {authError && <Alert severity="error">{authError}</Alert>}
-                    </form>
+                    {!isLoading && (
+                        <form onSubmit={handleLogin}>
+                            <TextField
+                                sx={{ width: "50%", m: 1 }}
+                                id="filled-basic"
+                                label="Your Email"
+                                variant="standard"
+                                name="email"
+                                type="email"
+                                onBlur={handleOnChange}
+                            />
+                            <TextField
+                                sx={{ width: "50%", m: 1 }}
+                                id="filled-basic"
+                                label="Your Password"
+                                variant="standard"
+                                name="password"
+                                type="password"
+                                onBlur={handleOnChange}
+                            />
+                            <Button
+                                sx={{ width: "50%", m: 1, bgcolor: 'secondary.main' }}
+                                type="submit"
+                                variant="contained"
+                            >
+                                Login
+                            </Button>
+                            <br />
+                            <NavLink style={{ textDecoration: "none" }} to="/register">
+                                <Button variant="text">New User? Please Register</Button>
+                            </NavLink>
+
+                        </form>
+                    )}
+                    {isLoading && <CircularProgress color="success" />}
+                    {user?.email && <Alert severity="success">Login successfully!</Alert>}
+                    {authError && <Alert severity="error">{authError}</Alert>}
                 </Grid>
             </Grid>
         </Container >
@@ -69,3 +72,4 @@ const Login = () => {
 };
 
 export default Login;
+

@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import { Container, Grid, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
+import React, { useState } from 'react';
+import Product from '../main/Product/Product';
 
-import { Container, Typography } from '@mui/material';
-import Product from '../Product/Product';
-
-const Products = () => {
+const ExploreProduct = () => {
     const [products, setProducts] = useState([])
     React.useEffect(() => {
         fetch('https://frozen-ocean-83961.herokuapp.com/products')
@@ -15,8 +13,8 @@ const Products = () => {
             })
     }, [])
     return (
-        <Box sx={{ flexGrow: 1, mb: 4 }}>
-            <Container style={{ textAlign: 'center' }}>
+        <Box sx={{ flexGrow: 1 }}>
+            <Container>
                 <Typography sx={{ fontWeight: 500, m: 2, color: 'success.main' }} variant="h6" component="div">
                     OUR SERVICES
                 </Typography>
@@ -35,4 +33,5 @@ const Products = () => {
         </Box>
     );
 };
-export default Products;
+
+export default ExploreProduct;

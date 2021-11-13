@@ -7,9 +7,10 @@ import {
     updateProfile,
     signOut,
 } from "firebase/auth";
+
 import initializeFirebase from "../Pages/Login/Firebase/Firebase.init";
 
-// initialize firebase app
+// initialize firebase
 initializeFirebase()
 
 const useFirebase = () => {
@@ -43,7 +44,7 @@ const useFirebase = () => {
             })
             .finally(() => setIsLoading(false));
     };
-
+    //login with email and password
     const loginUser = (email, password, location, history) => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
@@ -76,15 +77,17 @@ const useFirebase = () => {
         signOut(auth)
             .then(() => {
                 // Sign-out successful.
+
             })
             .catch((error) => {
                 // An error happened.
             })
             .finally(() => setIsLoading(false));
     };
+    //save user data to database
     const saveUser = (email, displayName) => {
         const user = { email, displayName };
-        fetch('http://localhost:5000/users', {
+        fetch('https://frozen-ocean-83961.herokuapp.com/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -95,7 +98,7 @@ const useFirebase = () => {
     }
     // checking user is admin or not
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://frozen-ocean-83961.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
             .finally(() => setIsLoading(false));

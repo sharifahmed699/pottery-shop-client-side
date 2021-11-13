@@ -7,6 +7,8 @@ import Login from './Pages/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import ExploreProduct from './Pages/ExploreProduct/ExploreProduct';
+import Purchase from './Pages/Purchase/Purchase';
 
 function App() {
   return (
@@ -18,6 +20,12 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
+            <Route exact path="/allProduct">
+              <ExploreProduct />
+            </Route>
+            <PrivateRoute path="/purchase/:id">
+              <Purchase />
+            </PrivateRoute>
             <PrivateRoute path="/dashboard">
               <Dashboard />
             </PrivateRoute>

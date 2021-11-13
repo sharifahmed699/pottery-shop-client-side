@@ -3,8 +3,8 @@ import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 
 
-const ReviewRating = () => {
-    const [value, setValue] = React.useState(3);
+const ReviewRating = ({ rating }) => {
+    const [value, setValue] = React.useState(rating);
     return (
         <Box
             sx={{
