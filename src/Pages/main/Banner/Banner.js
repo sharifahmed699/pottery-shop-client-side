@@ -31,7 +31,7 @@ const Banner = () => {
                         <Typography variant="h6" sx={{ my: 3, fontSize: 18, fontWeight: 600, color: 'white' }}>
                             We Make Unique Things With Love And Passion
                         </Typography>
-                        <Link to="/allProduct" style={{ textDecoration: 'none' }}><Button variant="outlined" color="error" style={{ marginBottom: "200px", fontSize: 18, color: 'warning.main' }}>Explore Now</Button></Link>
+                        <Link to="/allProduct" style={{ textDecoration: 'none' }}><Button variant="outlined" color="error" style={{ marginBottom: "110px", fontSize: 18, color: 'warning.main' }}>Explore Now</Button></Link>
                     </Container>
                 </Box>
             </Grid>

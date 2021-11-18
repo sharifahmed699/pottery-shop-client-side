@@ -9,7 +9,8 @@ import Reviews from './Reviews';
 
 
 const reviewBg = {
-    background: `url(${review})`
+    background: `url(${review})`,
+    width: '100%'
 }
 const Review = () => {
     const [reviews, setReviews] = useState([])
@@ -28,17 +29,19 @@ const Review = () => {
         slidesToScroll: 1
     };
     return (
-        <Box style={reviewBg} sx={{ py: 8 }} >
-            <Container style={{ textAlign: 'center' }}>
-                <Typography variant="h3" sx={{ py: 6 }}>Customers Review</Typography>
-                <Slider {...settings}>
-                    {
-                        reviews.map(review => <Reviews review={review}></Reviews>)
-                    }
+        <Container sx={{ my: 4 }}>
+            <Box style={reviewBg} sx={{ py: 8 }} >
+                <Container style={{ textAlign: 'center' }}>
+                    <Typography variant="h3" sx={{ py: 2, mb: 4, fontWeight: 'bold', fontStyle: 'oblique' }} style={{ color: "white" }}>Customers Feedback</Typography>
+                    <Slider {...settings}>
+                        {
+                            reviews.map(review => <Reviews review={review}></Reviews>)
+                        }
 
-                </Slider>
-            </Container>
-        </Box >
+                    </Slider>
+                </Container>
+            </Box >
+        </Container>
     );
 };
 

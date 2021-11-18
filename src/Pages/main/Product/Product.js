@@ -20,11 +20,11 @@ const Product = (props) => {
                     alt="green iguana"
                 />
                 <CardContent>
-                    <Typography variant="h5" component="div">
+                    <Typography variant="h5" component="div" sx={{ fontFamily: 'Roboto' }}>
                         {productName}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        {description}
+                    <Typography variant="subtitle2" color="text.secondary" sx={{ fontWeight: 'regular', fontFamily: 'Monospace', fontSize: 16 }}>
+                        {description.slice(0, 100)}
                     </Typography>
                     <Link to={`/purchase/${_id}`} style={{ textDecoration: 'none', paddingTop: '30px' }}><Button variant="contained" size="medium" style={{ marginTop: '10px', fontSize: '15px' }}>
                         Purchase Now

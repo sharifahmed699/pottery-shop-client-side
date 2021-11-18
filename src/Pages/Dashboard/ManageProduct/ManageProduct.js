@@ -6,7 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { Button, CardMedia, Container } from '@mui/material';
+import { Button, CardMedia } from '@mui/material';
 
 
 const ManageProduct = () => {
@@ -46,7 +46,7 @@ const ManageProduct = () => {
                         <TableRow>
                             <TableCell>Product Image</TableCell>
                             <TableCell align="right">Name</TableCell>
-                            <TableCell align="right">Description</TableCell>
+                            <TableCell align="center">Description</TableCell>
                             <TableCell align="right">Action</TableCell>
 
                         </TableRow>

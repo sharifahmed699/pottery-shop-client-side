@@ -16,7 +16,6 @@ const MyOrder = () => {
         email: user?.email
     }
     const keys = Object.values(obj);
-    console.log(myOrder)
 
     React.useEffect(() => {
         fetch('https://frozen-ocean-83961.herokuapp.com/order/userId', {

@@ -101,7 +101,6 @@ const useFirebase = () => {
         fetch(`https://frozen-ocean-83961.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
-            .finally(() => setIsLoading(false));
     }, [user.email])
 
     return {

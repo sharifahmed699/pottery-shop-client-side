@@ -6,12 +6,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -49,38 +43,31 @@ function Dashboard(props) {
         <div>
             <Toolbar />
             <Divider />
-            <Link to={`${url}`}><Button color="inherit">Dashboard</Button></Link>
+            <Link to='/' style={{ textDecoration: "none", margin: "40px", color: "tomato", paddingTop: "10px" }}><Button style={{ fontSize: "18px" }} color="inherit">Visit Website</Button></Link><br />
 
-            {!admin ? <Box>
-                <Link to={`${url}/myorder`}><Button color="inherit">My Order</Button></Link>
+            <Link to={`${url}`} style={{ textDecoration: "none", margin: "40px", color: "gray" }}><Button style={{ fontSize: "16px" }} color="inherit">Dashboard</Button></Link>
 
-                <Link to={`${url}/pay`}><Button color="inherit">Pay Now</Button></Link>
-                <Link to={`${url}/my-review`}><Button color="inherit">My Review</Button></Link>
+            {!admin ? <Box >
+                <Link to={`${url}/myorder`} style={{ textDecoration: "none", margin: "50px", color: "gray" }}><Button style={{ fontSize: "16px" }} color="inherit">My Order</Button></Link><br />
+
+                <Link to={`${url}/pay`} style={{ textDecoration: "none", margin: "50px", color: "gray" }}><Button style={{ fontSize: "16px" }} color="inherit">Pay Now</Button></Link><br />
+                <Link to={`${url}/my-review`} style={{ textDecoration: "none", margin: "50px", color: "gray" }}><Button color="inherit" style={{ fontSize: "16px" }}>My Review</Button></Link>
             </Box>
                 :
                 <Box>
-                    <Link to={`${url}/addProduct`}><Button color="inherit">Add Product</Button></Link>
+                    <Link to={`${url}/addProduct`} style={{ textDecoration: "none", margin: "40px", color: "gray" }}><Button color="inherit" style={{ fontSize: "16px" }}>Add Product</Button></Link>
 
-                    <Link to={`${url}/manage-product`}><Button color="inherit">Manage Product</Button></Link>
+                    <Link to={`${url}/manage-product`} style={{ textDecoration: "none", margin: "40px", color: "gray" }}><Button color="inherit" style={{ fontSize: "16px" }}>Manage Product</Button></Link>
 
-                    <Link to={`${url}/manage-order`}><Button color="inherit">Manage Order</Button></Link>
+                    <Link to={`${url}/manage-order`} style={{ textDecoration: "none", margin: "40px", color: "gray" }}><Button color="inherit" style={{ fontSize: "16px" }}>Manage Order</Button></Link>
 
-                    <Link to={`${url}/makeAdmin`}><Button color="inherit">Make Admin</Button></Link>
+                    <Link to={`${url}/makeAdmin`} style={{ textDecoration: "none", margin: "40px", color: "gray" }}><Button color="inherit" style={{ fontSize: "16px" }}>Make Admin</Button></Link>
 
                 </Box>}
             <Divider />
-            <Button color="inherit" onClick={logout}>Logout</Button>
-
-            <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
+            <Divider />
+            <Divider />
+            <Button color="inherit" onClick={logout} style={{ textAlign: "center", paddingLeft: "60px", fontSize: "18px", marginTop: "20px" }}>Logout</Button>
         </div>
     );
 
@@ -89,6 +76,7 @@ function Dashboard(props) {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
+
             <AppBar
                 position="fixed"
                 sx={{
@@ -96,7 +84,7 @@ function Dashboard(props) {
                     ml: { sm: `${drawerWidth}px` },
                 }}
             >
-                <Toolbar>
+                <Toolbar sx={{ bgcolor: 'warning.main' }}>
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
@@ -105,6 +93,7 @@ function Dashboard(props) {
                         sx={{ mr: 2, display: { sm: 'none' } }}
                     >
                         <MenuIcon />
+
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
                         Dashboard

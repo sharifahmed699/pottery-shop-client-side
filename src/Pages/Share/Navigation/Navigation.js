@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Container } from '@mui/material';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 
 const Navigation = () => {
@@ -16,7 +16,7 @@ const Navigation = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" enableColorOnDark >
-        <Toolbar>
+        <Toolbar sx={{ bgcolor: 'text.primary' }}>
           <Container style={{ display: "flex" }}>
             <IconButton
               size="large"
@@ -32,28 +32,30 @@ const Navigation = () => {
                 style={{ textDecoration: "none", color: "white" }}
                 to="/"
               >
-                <Button color="inherit">Craft</Button> </NavLink>
+                <Button color="inherit">Pottery Shop</Button> </NavLink>
             </Typography>
-            <NavLink
-              style={{ textDecoration: "none", color: "white", lineHeight: "2.4" }}
-              to="/dashboard"
-            >
-              <Button color="inherit">Dashboard</Button>
-            </NavLink>
             {user?.email ? (
               <Box>
-
+                <NavLink
+                  style={{ textDecoration: "none", color: "white", lineHeight: "2.4" }}
+                  to="/dashboard"
+                >
+                  <Button color="inherit">Dashboard</Button>
+                </NavLink>
                 <Button onClick={logout} color="inherit" style={{ lineHeight: "2.4" }}>
                   Logout
                 </Button>
               </Box>
             ) : (
-              <NavLink
-                style={{ textDecoration: "none", color: "white", lineHeight: "2.4" }}
-                to="/login"
-              >
-                <Button color="inherit">Login</Button>
-              </NavLink>
+              <Box>
+
+                <NavLink
+                  style={{ textDecoration: "none", color: "white", lineHeight: "2.4" }}
+                  to="/login"
+                >
+                  <Button color="inherit">Login</Button>
+                </NavLink>
+              </Box>
             )}
 
           </Container>

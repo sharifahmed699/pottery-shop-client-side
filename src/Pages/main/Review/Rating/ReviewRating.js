@@ -9,6 +9,7 @@ const ReviewRating = ({ rating }) => {
         <Box
             sx={{
                 '& > legend': { mt: 2 },
+                pb: 4
             }}
         >
             <Rating name="read-only" value={value} readOnly sx={{ py: 2 }} />
